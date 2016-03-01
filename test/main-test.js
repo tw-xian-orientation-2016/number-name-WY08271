@@ -145,4 +145,30 @@ describe('#translateThreeDigits()', function () {
             expect(result).toEqual(expectResult);
         })
     })
+
+    describe('translateThreeDigits()', function () {
+        it('can translate 3 length string array', function () {
+            var threeDigits = ['123', '234'];
+            var result = translateThreeDigits(threeDigits);
+            var expectResult = ['one hundred and twenty three', 'two hundred and thirty four'];
+
+            expect(result).toEqual(expectResult);
+        })
+
+        it('can translate 2 length string array', function () {
+            var threeDigits = ['23', '34'];
+            var result = translateThreeDigits(threeDigits);
+            var expectResult = ['twenty three', 'thirty four'];
+
+            expect(result).toEqual(expectResult);
+        })
+
+        it('can translate 1 length string array', function () {
+            var threeDigits = ['1', '4'];
+            var result = translateThreeDigits(threeDigits);
+            var expectResult = ['one', 'four'];
+
+            expect(result).toEqual(expectResult);
+        })
+    })
 })
