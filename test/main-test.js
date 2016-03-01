@@ -41,3 +41,16 @@ describe('#splitNumber()', function () {
         })
     })
 })
+
+describe('#translateThreeDigits()', function () {
+
+    describe('.translateOne()', function () {
+        it('can translage one digits, number is 1', function () {
+            var number = '1';
+            var result = translateOne(number);
+            var expectResult = 'one';
+
+            expect(result).toEqual(expectResult);
+        })
+    })
+})
