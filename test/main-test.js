@@ -53,4 +53,30 @@ describe('#translateThreeDigits()', function () {
             expect(result).toEqual(expectResult);
         })
     })
+
+    describe('.translateTwo()', function () {
+        it('can translage two digits, number is 19', function () {
+            var number = '19';
+            var result = translateTwo(number);
+            var expectResult = 'nineteen';
+
+            expect(result).toEqual(expectResult);
+        })
+
+        it('can translage two digits, number is 10', function () {
+            var number = '10';
+            var result = translateTwo(number);
+            var expectResult = 'ten';
+
+            expect(result).toEqual(expectResult);
+        })
+
+        it('can translage two digits, number is 09', function () {
+            var number = '09';
+            var result = translateTwo(number);
+            var expectResult = 'nine';
+
+            expect(result).toEqual(expectResult);
+        })
+    })
 })
