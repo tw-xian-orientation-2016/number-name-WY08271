@@ -198,3 +198,37 @@ describe('#addFlag()', function () {
         expect(result).toEqual(expectResult);
     })
 })
+
+describe('#mergeString()', function () {
+    it('can spell out 10010', function () {
+        var numberString = ['ten', 'ten thousand'];
+        var result = mergeString(numberString);
+        var expectResult = 'ten thousand and ten';
+
+        expect(result).toEqual(expectResult);
+    })
+
+    it('can spell out 1000100', function () {
+        var numberString = ['one hundred', '', 'one million'];
+        var result = mergeString(numberString);
+        var expectResult = 'one million and one hundred';
+
+        expect(result).toEqual(expectResult);
+    })
+
+    it('can spell out 12345', function () {
+        var numberString = ['three hundred and forty five', 'twelve thousand'];
+        var result = mergeString(numberString);
+        var expectResult = 'twelve thousand, three hundred and forty five';
+
+        expect(result).toEqual(expectResult);
+    })
+
+    it('can spell out 1234', function () {
+        var numberString = ['three hundred and forty five', 'one thousand'];
+        var result = mergeString(numberString);
+        var expectResult = 'one thousand, three hundred and forty five';
+
+        expect(result).toEqual(expectResult);
+    })
+})
