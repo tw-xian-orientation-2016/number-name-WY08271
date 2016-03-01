@@ -10,7 +10,7 @@ function lessTwentyNumber() {
         '17': 'seventeen',
         '18': 'eighteen',
         '19': 'nineteen'
-    }
+    };
 }
 
 function lessTenNumber() {
@@ -25,7 +25,7 @@ function lessTenNumber() {
         '7': 'seven',
         '8': 'eight',
         '9': 'nine'
-    }
+    };
 }
 
 function tensPlaceNumber() {
@@ -38,7 +38,7 @@ function tensPlaceNumber() {
         '7': 'seventy',
         '8': 'eighty',
         '9': 'ninety'
-    }
+    };
 }
 
 function flagNumber() {
@@ -49,5 +49,5 @@ function flagNumber() {
         '3': ' billion',
         '4': ' trillion',
         '5': ' quadrillion'
-    }
+    };
 }

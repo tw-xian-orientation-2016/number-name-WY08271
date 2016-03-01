@@ -20,7 +20,7 @@ function translateThreeDigits(threeDigits) {
         } else if (threeDigit.length === 1) {
             numberString.push(translateOne(threeDigit));
         }
-    })
+    });
 
     return numberString;
 }
