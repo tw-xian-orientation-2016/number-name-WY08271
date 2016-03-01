@@ -38,3 +38,19 @@ function translateTwo(twoDigit) {
         return tensPlace[tenPlace] + ' ' + lessTen[bitPlace];
     }
 }
+
+function translateThree(threeDigit) {
+    var lessTen = lessTenNumber();
+
+    var hundredPlace = threeDigit.charAt(0);
+    var otherPlace = threeDigit.slice(1);
+
+    if (parseInt(hundredPlace) === 0) {
+        return translateTwo(otherPlace);
+    } else if (translateTwo(otherPlace) === '') {
+        return lessTen[hundredPlace] + ' hundred';
+    }
+    else {
+        return lessTen[hundredPlace] + ' hundred and ' + translateTwo(otherPlace);
+    }
+}
