@@ -1,4 +1,4 @@
-function lessTwentyNumber(){
+function lessTwentyNumber() {
     return {
         '10': 'ten',
         '11': 'eleven',
@@ -13,7 +13,7 @@ function lessTwentyNumber(){
     }
 }
 
-function lessTenNumber(){
+function lessTenNumber() {
     return {
         '0': '',
         '1': 'one',
@@ -28,7 +28,7 @@ function lessTenNumber(){
     }
 }
 
-function tensPlaceNumber(){
+function tensPlaceNumber() {
     return {
         '2': 'twenty',
         '3': 'thirty',
@@ -38,5 +38,16 @@ function tensPlaceNumber(){
         '7': 'seventy',
         '8': 'eighty',
         '9': 'ninety'
+    }
+}
+
+function flagNumber() {
+    return {
+        '0': '',
+        '1': ' thousand',
+        '2': ' million',
+        '3': ' billion',
+        '4': ' trillion',
+        '5': ' quadrillion'
     }
 }
