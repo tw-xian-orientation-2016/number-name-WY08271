@@ -8,3 +8,13 @@ function splitNumber(number) {
 
     return threeDigits;
 }
+
+function translateThreeDigits(threeDigits) {
+
+}
+
+function translateOne(oneDigit) {
+    var lessTen = lessTenNumber();
+
+    return lessTen[oneDigit];
+}
