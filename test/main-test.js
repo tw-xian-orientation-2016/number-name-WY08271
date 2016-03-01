@@ -1,6 +1,6 @@
 describe('#splitNumber()', function () {
     describe('split number by 3 digit', function () {
-        it('can split number length is 1',function(){
+        it('can split number length is 1', function () {
             var number = '2';
             var result = splitNumber(number);
             var expectResult = ['2'];
@@ -8,7 +8,7 @@ describe('#splitNumber()', function () {
             expect(expectResult).toEqual(result);
         })
 
-        it('can split number length is 2',function(){
+        it('can split number length is 2', function () {
             var number = '23';
             var result = splitNumber(number);
             var expectResult = ['23'];
@@ -16,7 +16,7 @@ describe('#splitNumber()', function () {
             expect(expectResult).toEqual(result);
         })
 
-        it('can split number length is 3',function(){
+        it('can split number length is 3', function () {
             var number = '234';
             var result = splitNumber(number);
             var expectResult = ['234'];
