@@ -172,3 +172,29 @@ describe('#translateThreeDigits()', function () {
         })
     })
 })
+
+describe('#addFlag()', function () {
+    it('can add thousand flag', function () {
+        var threeDigits = ['two hundred and thirty four', 'one'];
+        var result = addFlag(threeDigits);
+        var expectResult = ['two hundred and thirty four', 'one thousand'];
+
+        expect(result).toEqual(expectResult);
+    })
+
+    it('can add million flag', function () {
+        var threeDigits = ['two hundred and thirty four', 'two hundred and thirty four', 'one'];
+        var result = addFlag(threeDigits);
+        var expectResult = ['two hundred and thirty four', 'two hundred and thirty four thousand', 'one million'];
+
+        expect(result).toEqual(expectResult);
+    })
+
+    it('can add billion flag', function () {
+        var threeDigits = ['two hundred and thirty four', 'two hundred and thirty four', 'two hundred and thirty four', 'one'];
+        var result = addFlag(threeDigits);
+        var expectResult = ['two hundred and thirty four', 'two hundred and thirty four thousand', 'two hundred and thirty four million', 'one billion'];
+
+        expect(result).toEqual(expectResult);
+    })
+})
