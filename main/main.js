@@ -10,7 +10,19 @@ function splitNumber(number) {
 }
 
 function translateThreeDigits(threeDigits) {
+    var numberString = [];
 
+    threeDigits.forEach(function (threeDigit) {
+        if (threeDigit.length === 3) {
+            numberString.push(translateThree(threeDigit));
+        } else if (threeDigit.length === 2) {
+            numberString.push(translateTwo(threeDigit));
+        } else if (threeDigit.length === 1) {
+            numberString.push(translateOne(threeDigit));
+        }
+    })
+
+    return numberString;
 }
 
 function translateOne(oneDigit) {
