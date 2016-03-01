@@ -232,3 +232,35 @@ describe('#mergeString()', function () {
         expect(result).toEqual(expectResult);
     })
 })
+
+describe('#spellOutNumber', function () {
+    it('can spell out 10010 to string', function () {
+        var numberString = '10010';
+        var expectResult = 'ten thousand and ten';
+
+        spyOn(console, 'log');
+        spellOutNumber(numberString);
+
+        expect(console.log).toHaveBeenCalledWith(expectResult);
+    })
+
+    it('can spell out 43112603 to string', function () {
+        var numberString = '43112603';
+        var expectResult = 'forty three million, one hundred and twelve thousand, six hundred and three';
+
+        spyOn(console, 'log');
+        spellOutNumber(numberString);
+
+        expect(console.log).toHaveBeenCalledWith(expectResult);
+    })
+
+    it('can spell out 512607 to string', function () {
+        var numberString = '512607';
+        var expectResult = 'five hundred and twelve thousand, six hundred and seven';
+
+        spyOn(console, 'log');
+        spellOutNumber(numberString);
+
+        expect(console.log).toHaveBeenCalledWith(expectResult);;
+    })
+})
