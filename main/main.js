@@ -70,11 +70,8 @@ function translateThree(threeDigit) {
 function addFlag(numberString) {
     var flag = flagNumber();
 
-    console.log(flag);
-
     for (var i = 0; i < numberString.length; i++) {
         numberString[i] += flag[i];
-        console.log(flag[i]);
     }
 
     return numberString;
