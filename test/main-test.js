@@ -10,31 +10,18 @@ describe('splitNumber()', function () {
 });
 
 describe('translateThreeDigits()', function () {
-    describe('translateOne()', function () {
-        it('can translage one digits, number is 1', function () {
-            var number = '1';
+    it('translateOne() can translage one digits', function () {
+        var number = '1';
 
-            expect(translateOne(number)).toEqual('one');
-        });
+        expect(translateOne(number)).toEqual('one');
     });
 
-    describe('translateTwo()', function () {
-        it('can translage two digits, number is 19', function () {
-            var number = '19';
+    it('translateTwo() can translage two digits', function () {
+        var numbers = ['19', '10', '09', '00'];
+        var expectResult = ['nineteen', 'ten', 'nine', ''];
 
-            expect(translateTwo(number)).toEqual('nineteen');
-        });
-
-        it('can translage two digits, number is 10', function () {
-            var number = '10';
-
-            expect(translateTwo(number)).toEqual('ten');
-        });
-
-        it('can translage two digits, number is 09', function () {
-            var number = '09';
-
-            expect(translateTwo(number)).toEqual('nine');
+        numbers.forEach(function (number, index) {
+            expect(translateTwo(number)).toEqual(expectResult[index]);
         });
     });
 
