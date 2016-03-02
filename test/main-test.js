@@ -1,33 +1,10 @@
 describe('splitNumber()', function () {
-    describe('split number by 3 digit', function () {
-        it('can split number length is 1', function () {
-            var number = '2';
+    it('split number by 3 digit', function () {
+        var numbers = ['2', '23', '234', '234567', '2345678'];
+        var expectResult = [['2'], ['23'], ['234'], ['567', '234'], ['678', '345', '2']];
 
-            expect(splitNumber(number)).toEqual(['2']);
-        });
-
-        it('can split number length is 2', function () {
-            var number = '23';
-
-            expect(splitNumber(number)).toEqual(['23']);
-        });
-
-        it('can split number length is 3', function () {
-            var number = '234';
-
-            expect(splitNumber(number)).toEqual(['234']);
-        });
-
-        it('can split number length is 6', function () {
-            var number = '234567';
-
-            expect(splitNumber(number)).toEqual(['567', '234']);
-        });
-
-        it('can split number length is 7', function () {
-            var number = '2345678';
-
-            expect(splitNumber(number)).toEqual(['678', '345', '2']);
+        numbers.forEach(function (number, index) {
+            expect(splitNumber(number)).toEqual(expectResult[index]);
         });
     });
 });
