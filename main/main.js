@@ -71,7 +71,9 @@ function addFlag(numberString) {
     var flag = flagNumber();
 
     for (var i = 0; i < numberString.length; i++) {
-        numberString[i] += flag[i];
+        if (numberString[i] !== '') {
+            numberString[i] += flag[i];
+        }
     }
 
     return numberString;
