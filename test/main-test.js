@@ -25,7 +25,7 @@ describe('translateThreeDigits()', function () {
         });
     });
 
-    it('getThreeDigit() can translage three digits', function () {
+    it('translateThree() can translage three digits', function () {
         var numbers = ['111', '011', '110', '010', '101', '001', '100', '000'];
         var expectResult = ['one hundred and eleven', 'eleven', 'one hundred and ten', 'ten', 'one hundred and one', 'one', 'one hundred', ''];
 
@@ -88,7 +88,7 @@ describe('addFlag()', function () {
     });
 });
 
-describe('#mergeString()', function () {
+describe('mergeString()', function () {
     it('can spell out 10010', function () {
         var numberString = ['ten', 'ten thousand'];
         var expectResult = 'ten thousand and ten';
