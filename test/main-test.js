@@ -79,39 +79,17 @@ describe('addFlag()', function () {
 });
 
 describe('mergeString()', function () {
-    it('can spell out 10010', function () {
-        var numberString = ['ten', 'ten thousand'];
-        var expectResult = 'ten thousand and ten';
+    it('can merge stringArray to a string', function () {
+        var numberStrings = [['ten', 'ten thousand'], ['one hundred', '', 'one million'],
+            ['three hundred and forty five', 'twelve thousand'], ['three hundred and forty five', 'one thousand'],
+            ['two hundred and thirty four', '', 'one million']];
+        var expectResults = ['ten thousand and ten', 'one million and one hundred',
+            'twelve thousand, three hundred and forty five', 'one thousand, three hundred and forty five',
+            'one million, , two hundred and thirty four'];
 
-        expect(mergeString(numberString)).toEqual(expectResult);
-    });
-
-    it('can spell out 1000100', function () {
-        var numberString = ['one hundred', '', 'one million'];
-        var expectResult = 'one million and one hundred';
-
-        expect(mergeString(numberString)).toEqual(expectResult);
-    });
-
-    it('can spell out 12345', function () {
-        var numberString = ['three hundred and forty five', 'twelve thousand'];
-        var expectResult = 'twelve thousand, three hundred and forty five';
-
-        expect(mergeString(numberString)).toEqual(expectResult);
-    });
-
-    it('can spell out 1234', function () {
-        var numberString = ['three hundred and forty five', 'one thousand'];
-        var expectResult = 'one thousand, three hundred and forty five';
-
-        expect(mergeString(numberString)).toEqual(expectResult);
-    });
-
-    it('can spell out 1000234', function () {
-        var numberString = ['two hundred and thirty four', '', 'one million'];
-        var expectResult = 'one million, , two hundred and thirty four';
-
-        expect(mergeString(numberString)).toEqual(expectResult);
+        numberStrings.forEach(function (numberString, index) {
+            expect(mergeString(numberString)).toEqual(expectResults[index]);
+        });
     });
 });
 
