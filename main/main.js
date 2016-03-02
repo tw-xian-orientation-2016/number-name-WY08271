@@ -91,7 +91,7 @@ function mergeString(numberString) {
     return upsideString;
 }
 
-function spellOutNumber(number){
+function spellOutNumber(number) {
     var threeDigits = splitNumber(number);
     var numberString = translateThreeDigits(threeDigits);
     addFlag(numberString);
