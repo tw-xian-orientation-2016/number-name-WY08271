@@ -27,8 +27,9 @@ function translateThreeDigits(threeDigits) {
 
 function translateOne(oneDigit) {
     var lessTen = lessTenNumber();
+    var result = oneDigit === '0' ? 'zero' : lessTen[oneDigit];
 
-    return lessTen[oneDigit];
+    return result;
 }
 
 function translateTwo(twoDigit) {
