@@ -49,32 +49,18 @@ describe('translateThreeDigits()', function () {
 });
 
 describe('addFlag()', function () {
-    it('can add thousand flag', function () {
-        var threeDigits = ['two hundred and thirty four', 'one'];
-        var expectResult = ['two hundred and thirty four', 'one thousand'];
+    it('can add flag respectively', function () {
+        var threeDigits = [['two hundred and thirty four', 'one'], ['two hundred and thirty four', 'two hundred and thirty four', 'one'],
+            ['two hundred and thirty four', 'two hundred and thirty four', 'two hundred and thirty four', 'one'],
+            ['two hundred and thirty four', '', 'one']];
+        var expectResults = [['two hundred and thirty four', 'one thousand'],
+            ['two hundred and thirty four', 'two hundred and thirty four thousand', 'one million'],
+            ['two hundred and thirty four', 'two hundred and thirty four thousand', 'two hundred and thirty four million', 'one billion'],
+            ['two hundred and thirty four', '', 'one million']];
 
-        expect(addFlag(threeDigits)).toEqual(expectResult);
-    });
-
-    it('can add million flag', function () {
-        var threeDigits = ['two hundred and thirty four', 'two hundred and thirty four', 'one'];
-        var expectResult = ['two hundred and thirty four', 'two hundred and thirty four thousand', 'one million'];
-
-        expect(addFlag(threeDigits)).toEqual(expectResult);
-    });
-
-    it('can add billion flag', function () {
-        var threeDigits = ['two hundred and thirty four', 'two hundred and thirty four', 'two hundred and thirty four', 'one'];
-        var expectResult = ['two hundred and thirty four', 'two hundred and thirty four thousand', 'two hundred and thirty four million', 'one billion'];
-
-        expect(addFlag(threeDigits)).toEqual(expectResult);
-    });
-
-    it('can add no flag', function () {
-        var threeDigits = ['two hundred and thirty four', '', 'one'];
-        var expectResult = ['two hundred and thirty four', '', 'one million'];
-
-        expect(addFlag(threeDigits)).toEqual(expectResult);
+        threeDigits.forEach(function (threeDigit, index) {
+            expect(addFlag(threeDigit)).toEqual(expectResults[index]);
+        });
     });
 });
 
