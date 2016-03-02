@@ -276,6 +276,16 @@ describe('#spellOutNumber', function () {
         spyOn(console, 'log');
         spellOutNumber(numberString);
 
-        expect(console.log).toHaveBeenCalledWith(expectResult);;
+        expect(console.log).toHaveBeenCalledWith(expectResult);
+    });
+
+    it('can spell out 1000100 to string', function () {
+        var numberString = '1000100';
+        var expectResult = 'one million and one hundred';
+
+        spyOn(console, 'log');
+        spellOutNumber(numberString);
+
+        expect(console.log).toHaveBeenCalledWith(expectResult);
     });
 });
