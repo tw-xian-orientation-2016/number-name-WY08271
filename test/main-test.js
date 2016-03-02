@@ -25,54 +25,12 @@ describe('translateThreeDigits()', function () {
         });
     });
 
-    describe('getThreeDigit()', function () {
-        it('can translage three digits, number is 111', function () {
-            var number = '111';
+    it('getThreeDigit() can translage three digits', function () {
+        var numbers = ['111', '011', '110', '010', '101', '001', '100', '000'];
+        var expectResult = ['one hundred and eleven', 'eleven', 'one hundred and ten', 'ten', 'one hundred and one', 'one', 'one hundred', ''];
 
-            expect(translateThree(number)).toEqual('one hundred and eleven');
-        });
-
-        it('can translage three digits, number is 011', function () {
-            var number = '011';
-
-            expect(translateThree(number)).toEqual('eleven');
-        });
-
-        it('can translage three digits, number is 110', function () {
-            var number = '110';
-
-            expect(translateThree(number)).toEqual('one hundred and ten');
-        });
-
-        it('can translage three digits, number is 010', function () {
-            var number = '010';
-
-            expect(translateThree(number)).toEqual('ten');
-        });
-
-        it('can translage three digits, number is 101', function () {
-            var number = '101';
-
-            expect(translateThree(number)).toEqual('one hundred and one');
-        });
-
-        it('can translage three digits, number is 001', function () {
-            var number = '001';
-
-            expect(translateThree(number)).toEqual('one');
-        });
-
-        it('can translage three digits, number is 100', function () {
-            var number = '100';
-            var result = translateThree(number);
-
-            expect(result).toEqual('one hundred');
-        });
-
-        it('can translage three digits, number is 000', function () {
-            var number = '000';
-
-            expect(translateThree(number)).toEqual('');
+        numbers.forEach(function (number, index) {
+            expect(translateThree(number)).toEqual(expectResult[index]);
         });
     });
 
