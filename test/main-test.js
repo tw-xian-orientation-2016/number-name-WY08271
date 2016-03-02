@@ -11,9 +11,12 @@ describe('splitNumber()', function () {
 
 describe('translateThreeDigits()', function () {
     it('translateOne() can translage one digits', function () {
-        var number = '1';
+        var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        var expectResult = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 
-        expect(translateOne(number)).toEqual('one');
+        numbers.forEach(function (number, index) {
+            expect(translateOne(number)).toEqual(expectResult[index]);
+        });
     });
 
     it('translateTwo() can translage two digits', function () {
