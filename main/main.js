@@ -82,11 +82,9 @@ function addFlag(numberString) {
 function mergeString(numberString) {
     var upsideString = numberString.reverse().join(', ');
 
-    if (upsideString.indexOf(', ,') !== -1) {
+    if ((upsideString.indexOf(', ,') !== -1) && (upsideString.indexOf(' and ') === -1)) {
         upsideString = upsideString.replace(', ,', ' and');
-    }
-
-    if (upsideString.indexOf(' and ') === -1) {
+    } else if (upsideString.indexOf(' and ') === -1) {
         upsideString = upsideString.replace(', ', ' and ');
     }
 
