@@ -115,44 +115,17 @@ describe('mergeString()', function () {
     });
 });
 
-describe('spellOutNumber', function () {
-    it('can spell out 10010 to string', function () {
-        var numberString = '10010';
-        var expectResult = 'ten thousand and ten';
+describe('spellOutNumber()', function () {
+    it('according to number translate into English', function () {
+        var numberStrings = ['10010', '43112603', '512607', '1000100'];
+        var expectResults = ['ten thousand and ten', 'forty three million, one hundred and twelve thousand, six hundred and three',
+            'five hundred and twelve thousand, six hundred and seven', 'one million and one hundred'];
 
         spyOn(console, 'log');
-        spellOutNumber(numberString);
+        numberStrings.forEach(function (numberString, index) {
+            spellOutNumber(numberString);
 
-        expect(console.log).toHaveBeenCalledWith(expectResult);
-    });
-
-    it('can spell out 43112603 to string', function () {
-        var numberString = '43112603';
-        var expectResult = 'forty three million, one hundred and twelve thousand, six hundred and three';
-
-        spyOn(console, 'log');
-        spellOutNumber(numberString);
-
-        expect(console.log).toHaveBeenCalledWith(expectResult);
-    });
-
-    it('can spell out 512607 to string', function () {
-        var numberString = '512607';
-        var expectResult = 'five hundred and twelve thousand, six hundred and seven';
-
-        spyOn(console, 'log');
-        spellOutNumber(numberString);
-
-        expect(console.log).toHaveBeenCalledWith(expectResult);
-    });
-
-    it('can spell out 1000100 to string', function () {
-        var numberString = '1000100';
-        var expectResult = 'one million and one hundred';
-
-        spyOn(console, 'log');
-        spellOutNumber(numberString);
-
-        expect(console.log).toHaveBeenCalledWith(expectResult);
+            expect(console.log).toHaveBeenCalledWith(expectResults[index]);
+        });
     });
 });
