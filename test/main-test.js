@@ -196,6 +196,14 @@ describe('#addFlag()', function () {
 
         expect(result).toEqual(expectResult);
     });
+
+    it('can add no flag', function () {
+        var threeDigits = ['two hundred and thirty four', '', 'one'];
+        var result = addFlag(threeDigits);
+        var expectResult = ['two hundred and thirty four', '', 'one million'];
+
+        expect(result).toEqual(expectResult);
+    });
 });
 
 describe('#mergeString()', function () {
