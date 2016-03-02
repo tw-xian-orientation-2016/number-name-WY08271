@@ -238,6 +238,14 @@ describe('#mergeString()', function () {
 
         expect(result).toEqual(expectResult);
     });
+
+    it('can spell out 1000234', function () {
+        var threeDigits = ['two hundred and thirty four', '', 'one million'];
+        var result = mergeString(threeDigits);
+        var expectResult = 'one million, , two hundred and thirty four';
+
+        expect(result).toEqual(expectResult);
+    });
 });
 
 describe('#spellOutNumber', function () {
