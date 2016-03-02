@@ -37,26 +37,13 @@ describe('translateThreeDigits()', function () {
         });
     });
 
-    describe('translateThreeDigits()', function () {
-        it('can translate 3 length string array', function () {
-            var threeDigits = ['123', '234'];
-            var expectResult = ['one hundred and twenty three', 'two hundred and thirty four'];
+    it('translateThreeDigits() can translate string array', function () {
 
-            expect(translateThreeDigits(threeDigits)).toEqual(expectResult);
-        });
+        var threeDigits = [['123', '234'], ['23', '34'], ['1', '4']];
+        var expectResult = [['one hundred and twenty three', 'two hundred and thirty four'], ['twenty three', 'thirty four'], ['one', 'four']];
 
-        it('can translate 2 length string array', function () {
-            var threeDigits = ['23', '34'];
-            var expectResult = ['twenty three', 'thirty four'];
-
-            expect(translateThreeDigits(threeDigits)).toEqual(expectResult);
-        });
-
-        it('can translate 1 length string array', function () {
-            var threeDigits = ['1', '4'];
-            var expectResult = ['one', 'four'];
-
-            expect(translateThreeDigits(threeDigits)).toEqual(expectResult);
+        threeDigits.forEach(function (threeDigit, index) {
+            expect(translateThreeDigits(threeDigit)).toEqual(expectResult[index]);
         });
     });
 });
